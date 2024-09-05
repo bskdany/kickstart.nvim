@@ -1,6 +1,9 @@
 -- Toggle fold with 'zc'
 vim.keymap.set('n', 'zc', 'za', { noremap = true, silent = true })
 
+vim.opt.tabstop = 4 -- Number of visual spaces per TAB
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
 -- Open fold if it exists with <Enter>
 vim.keymap.set('n', '<CR>', 'zo', { noremap = true, silent = true })
 
