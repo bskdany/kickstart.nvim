@@ -11,12 +11,12 @@ vim.keymap.set('n', '<CR>', 'zo', { noremap = true, silent = true })
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = '*',
+--   callback = function()
+--     vim.lsp.buf.format()
+--   end,
+-- })
 
 -- Map Ctrl+S to save in normal and insert mode
 vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
@@ -627,13 +627,13 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        local lsp_format_opt
-        if disable_filetypes[vim.bo[bufnr].filetype] then
-          lsp_format_opt = 'never'
-        else
-          lsp_format_opt = 'fallback'
-        end
+        -- local disable_filetypeg
+        -- local lsp_format_opt
+        -- if disable_filetypes[vim.bo[bufnr].filetype] then
+        --   lsp_format_opt = 'never'
+        -- else
+        --   lsp_format_opt = 'fallback'
+        -- end
         return {
           timeout_ms = 500,
           lsp_format = lsp_format_opt,
